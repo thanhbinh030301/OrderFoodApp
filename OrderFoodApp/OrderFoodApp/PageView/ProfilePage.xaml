@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="OrderFoodApp.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F4F5FA">
+            <StackLayout>
+                <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HeightRequest="50" BackgroundColor="#6CB0C5" Text="TÀI KHOẢN" FontSize="Large" TextColor="White"/>
+            </StackLayout>
+            <StackLayout Padding="0,20,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="iconMessage.png"  WidthRequest="30" Grid.Row="0" Grid.Column="0"  HorizontalOptions="EndAndExpand">
+                        <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image Source="iconNotification.png"  WidthRequest="30" Grid.Row="0" Grid.Column="1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </Grid>
+            </StackLayout>
+
+            <Frame Margin="20,5,20,0" CornerRadius="50" Padding="10" HeightRequest="60" >
+                <StackLayout>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame CornerRadius="100" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="LightPink" Padding="0"   >
+                            <Image Source="anhdaidien.png" VerticalOptions="Center" HorizontalOptions="Center" />
+                        </Frame>
+                        <Label Text="Nguyễn Văn A" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="#6CB0C5" FontSize="Medium"/>
+                        <Label Text="nguyenvana@gmail.com" Grid.Row="1" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <Button Margin="0,20,0,0" Text="Quản lý tài khoản" WidthRequest="350" HorizontalOptions="Center" BackgroundColor="#6CB0C5" TextColor="White" HeightRequest="40" CornerRadius="20"/>
+            <Button  Text="Giỏ hàng của tôi" WidthRequest="350" HorizontalOptions="Center" BackgroundColor="#6CB0C5" TextColor="White" HeightRequest="40" CornerRadius="20" x:Name="ChangeToCart" Clicked="ChangeToCart_Clicked"/>
+            <Button  Text="Đơn hàng đã đặt" WidthRequest="350" HorizontalOptions="Center" BackgroundColor="#6CB0C5" TextColor="White" HeightRequest="40" CornerRadius="20" Clicked="order_Clicked" />
+            <Button  Text="Hổ trợ thêm" WidthRequest="350" HorizontalOptions="Center" BackgroundColor="#6CB0C5" TextColor="White" HeightRequest="40" CornerRadius="20"/>
+            <Button  Text="Đổi mật khẩu" WidthRequest="350" HorizontalOptions="Center" BackgroundColor="#6CB0C5" TextColor="White" HeightRequest="40" CornerRadius="20"/>
+            <Button  Text="Đăng Xuất" WidthRequest="350" HorizontalOptions="Center" BackgroundColor="#6CB0C5" TextColor="White" HeightRequest="40" CornerRadius="20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

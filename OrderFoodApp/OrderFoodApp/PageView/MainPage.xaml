@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderFoodApp.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#e6e6e6">
+            <Grid>
+                <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                    <Frame BackgroundColor="#fff"  Padding="0" Margin="0">
+                        <Image Source="anhdoan.png" HeightRequest="400" Aspect="AspectFill" Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Margin="0,420,0,0">
+      
+                    <Label Text="Best tips for your diet" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                                     
+                    <Label Text="Knowing how to read food labels can help you choose healthier options. Use the calorie information to work out  how a particular food fits into your daily"  HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  Margin="20,8" TextColor="DarkGray" FontAttributes="None" FontSize="Small"   />
+
+                    <Button Text="Next" BackgroundColor="#6CB0C5" TextColor="White" Margin="140,10" CornerRadius="30" x:Name="PrkNext" Clicked="PrkNext_Clicked" />
+           
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

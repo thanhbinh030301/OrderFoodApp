@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderFoodApp.OrderSuccessPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F4F5FA">
+            <Image Margin="0,80,0,0" Source="orderSuccess.png"/>
+            <Label  Text="Đặt hàng Thành công" TextColor="#6CB0C5" FontSize="Large" HorizontalOptions="Center"/>
+            <Label Text="Chúng tôi sẽ giao hàng trong vài phút tới" FontSize="12" TextColor="#6CB0C5" HorizontalOptions="Center"/>
+            <Label Text="Chúc bạn có một bữa ăn ngon miệng" FontSize="12" TextColor="#6CB0C5" HorizontalOptions="Center"/>
+            <Button Text="Tiếp tục mua sắm" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" HeightRequest="40" Margin="0,20,0,0" Padding="0" BackgroundColor="#6CB0C5" TextColor="White" CornerRadius="20" x:Name="ChangeToHome" Clicked="ChangeToHome_Clicked"/>
+            <Button Text="Xem đơn hàng" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" HeightRequest="40" Margin="0,20,0,0" Padding="0" BackgroundColor="#6CB0C5" TextColor="White" CornerRadius="20" x:Name="ChangeToSuccessPage" Clicked="ChangeToSuccessPage_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

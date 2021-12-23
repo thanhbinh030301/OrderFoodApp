@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderFoodApp.FavoritePage">
+    <ContentPage.Content>
+        <ScrollView>
+        <Grid>
+            <!-- 2.0 Main structure-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- 2.1 Main body-->
+            <Label Grid.Row="0" BackgroundColor="#6CB0C5" HeightRequest="140"/>
+            <Label Grid.Row="0" Text="DANH SÁCH YÊU THÍCH" Margin="0,42,0,0" TextColor="#fff" Opacity="90" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            <!-- 2.2 Rounded board-->
+            <StackLayout Grid.Row="2" BackgroundColor="White" Margin="0,-40">
+                <!-- Struture for the next block-->
+                <Grid Padding="25,30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!-- 2.3 Legend-->
+                    <Label x:Name="countFavorItem" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="18"/>
+                    <Image Grid.Row="0" Grid.Column="1" Source="More"/>
+                    <!-- 2.4 Menu options-->
+                    <StackLayout BindableLayout.ItemsSource="{Binding LstFavourite}" 
+                               VerticalOptions="Start"
+                               Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame HasShadow="False" BackgroundColor="#6CB0C5" HeightRequest="90" CornerRadius="20" Margin="0,10">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <StackLayout Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Margin="0,0,10,0">
+                                                <Image Source="{Binding Img}" HeightRequest="100" WidthRequest="95" Aspect="AspectFill"/>
+                                            </StackLayout>
+                                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Name}" FontSize="15" FontAttributes="Bold"/>
+                                            <Label Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Text="{Binding Descr}" FontSize="15" TextColor="#000"/>
+                                            <Image Grid.Row="2" Grid.Column="1" Source="Star" HorizontalOptions="Start" WidthRequest="20"/>
+                                            <Label Grid.Row="2" Grid.Column="1" Margin="30,0,0,0" FontSize="15" VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="4.8" FontAttributes="Bold" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+        </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

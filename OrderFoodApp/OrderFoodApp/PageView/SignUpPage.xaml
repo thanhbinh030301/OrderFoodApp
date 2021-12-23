@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:OrderFoodApp.CustomRenderer"
+             mc:Ignorable="d"
+             x:Class="OrderFoodApp.SignUpPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#F4F5FA">
+            <Grid>
+                <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <StackLayout Margin="10">
+                            <Label Text="ĐĂNG KÝ" TextColor="#6CB0C5" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="28"/>
+                        </StackLayout>
+                        <StackLayout Padding="0" Margin="15,10">
+
+                            <Frame BackgroundColor="#fff" BorderColor="#fff" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="15">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="#fff" HeightRequest="40" WidthRequest="40" CornerRadius="15" Padding="0" Margin="5">
+                                        <Image Source="email.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
+                                    <local:CustomEntry x:Name="Email" Placeholder="Email" FontSize="15" TextColor="#6CB0C5" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="#fff" BorderColor="#fff" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="15">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="#fff" HeightRequest="40" WidthRequest="40" CornerRadius="15" Padding="0" Margin="5">
+                                        <Image Source="user3.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
+                                    <local:CustomEntry x:Name="UsrName" Placeholder="User Name" Keyboard="Text" VerticalOptions="CenterAndExpand" FontSize="15" TextColor="#6CB0C5" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="#fff" BorderColor="#fff" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="15">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="#fff" HeightRequest="40" WidthRequest="40" CornerRadius="15" Padding="0" Margin="5">
+                                        <Image Source="keylock3.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
+                                    <local:CustomEntry x:Name="Pwd" Placeholder="Password" Keyboard="Text" VerticalOptions="CenterAndExpand" FontSize="15" IsPassword="True" TextColor="#6CB0C5" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="10,5" >
+                                <Label Text="By creating an account, you agree to our Terms of Service and Privacy Policy" TextColor="DarkGray" FontAttributes="None" HorizontalOptions="EndAndExpand" FontSize="13" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+
+                            <Button Text="ĐĂNG KÝ TÀI KHOẢN" BackgroundColor="#6CB0C5" TextColor="White" CornerRadius="30" Clicked="Signup_Clicked" />
+
+                            <StackLayout Margin="3,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Frame BackgroundColor="White" HeightRequest="60" WidthRequest="60" CornerRadius="15" HasShadow="False" BorderColor="#fff" Margin="5,0" HorizontalOptions="Center" Padding="0">
+                                    <Image Source="https://www.facebook.com/images/fb_icon_325x325.png" Margin="12"/>
+                                </Frame>
+                                <Frame BackgroundColor="White" HeightRequest="60" WidthRequest="60" CornerRadius="15" HasShadow="False" BorderColor="#fff" Margin="5,0" HorizontalOptions="Center" Padding="0">
+                                    <Image Source="https://freesvg.org/img/1534129544.png" HeightRequest="15" WidthRequest="15"  Margin="12"/>
+                                </Frame>
+                                <Frame BackgroundColor="White" HeightRequest="60" WidthRequest="60" CornerRadius="15" HasShadow="False" BorderColor="#fff" Margin="5,0" HorizontalOptions="Center" Padding="0">
+                                    <Image Source="https://cdn-icons-png.flaticon.com/512/174/174855.png" HeightRequest="15" WidthRequest="15" Margin="12"/>
+                                </Frame>
+                            </StackLayout>
+
+                        </StackLayout>
+
+
+                    </StackLayout>
+
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="OrderFoodApp.CartPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F4F5FA">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="back.png" WidthRequest="25" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                <Label Text="Giỏ hàng của bạn" TextColor="#6CB0C5" Grid.Column="1" Grid.Row="0" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Image Source="cart.png" WidthRequest="25" Grid.Column="2" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+            </Grid>
+            <ScrollView>
+            <StackLayout Padding="10" Margin="0,20,0,0" Orientation="Vertical" BindableLayout.ItemsSource="{Binding LstCart}" >
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="7" BackgroundColor="AliceBlue" CornerRadius="20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding Img}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" WidthRequest="50" HeightRequest="50"/>
+                                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" FontSize="16" WidthRequest="140"/>
+                                <Label Text="{Binding Price}" Grid.Row="1" Grid.Column="1" FontSize="12" />
+
+                                <Image Source="minus.png" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" WidthRequest="25"/>
+                                <Label Text="{Binding Number}" Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" FontSize="19" />
+                                <Image Source="plus.png" Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" WidthRequest="25"/>
+
+                                    <Image Source="trash.png" Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" WidthRequest="22" Margin="40,0,0,0">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="DeleteCart_Tapped"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+
+                                </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            </ScrollView>
+
+            <Grid Margin="12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="95"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Tổng cộng:" FontSize="17" Margin="10,0" FontAttributes="Bold" TextColor="#6CB0C5" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" />
+                <Label x:Name="PriceTotal" Margin="10,0" FontSize="17" FontAttributes="Bold"  TextColor="#6CB0C5" Grid.Row="0" Grid.Column="1" HorizontalOptions="End" />
+            </Grid>
+            <AbsoluteLayout>
+
+                <Button AbsoluteLayout.LayoutBounds="90,20,200,45" Text="XÁC NHẬN ĐẶT HÀNG" HorizontalOptions="Center" VerticalOptions="Center"  Padding="10" Margin="36,0,0,0" WidthRequest="200" CornerRadius="20" BackgroundColor="#6CB0C5" TextColor="White" x:Name="ChangeSucessPage" Clicked="ChangeSucessPage_Clicked"/>
+            </AbsoluteLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

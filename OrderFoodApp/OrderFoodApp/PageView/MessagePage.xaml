@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="OrderFoodApp.MessagePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="0,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="iconMessageBlue.png" Grid.Row="0" Grid.Column="0" WidthRequest="30" HorizontalOptions="EndAndExpand"/>
+                <Label Text="Tin Nhắn" TextColor="#6BC0C5" FontSize="Large" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+                <Image Source="iconX.png" Grid.Row="0" Grid.Column="2" WidthRequest="25" HorizontalOptions="StartAndExpand" />
+            </Grid>
+
+            <Frame CornerRadius="20" BackgroundColor="#CCCCCC" HeightRequest="40" Padding="0" Margin="20,30,20,0">
+                <Label Text="Tìm kiếm tin nhắn"  VerticalOptions="Center"  HorizontalOptions="Center"/>
+            </Frame>
+
+            <Frame Margin="20,30,20,0" CornerRadius="50" Padding="10" >
+                <StackLayout>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame CornerRadius="100" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="#6CB0C5" Padding="0"   >
+                            <Label Text="LS" FontSize="Medium" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" Padding="0" />
+                        </Frame>
+                        <Label Text=" LyCake Store" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+                        <Label Text="Đơn hàng của bạn sẽ được gửi trong vòng 10-20 ngày" FontSize="Micro" Grid.Row="1" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                        <Label Text="9.20 AM" Grid.Row="0" Grid.Column="2" TextColor="LightPink" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="20,5,20,0" CornerRadius="50" Padding="10" >
+                <StackLayout>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame CornerRadius="100" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="LightPink" Padding="0"   >
+                            <Label Text="FS" FontSize="Medium" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" Padding="0" />
+                        </Frame>
+                        <Label Text="Food Health Store" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+                        <Label Text="Đơn hàng của bạn đang được xử lý, vui lòng chờ đợi trong giây lát" FontSize="Micro" Grid.Row="1" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                        <Label Text="9.50 AM" Grid.Row="0" Grid.Column="2" TextColor="LightPink" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="20,5,20,0" CornerRadius="50" Padding="10" >
+                <StackLayout>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame CornerRadius="100" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="#6CB0C5" Padding="0"   >
+                            <Label Text="BS" FontSize="Medium" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" Padding="0" />
+                        </Frame>
+                        <Label Text=" BCromer Store" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+                        <Label Text="Đơn hàng của bạn sẽ được gửi trong vòng 5-10 ngày" FontSize="Micro" Grid.Row="1" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                        <Label Text="10.20 AM" Grid.Row="0" Grid.Column="2" TextColor="LightPink" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="20,5,20,0" CornerRadius="50" Padding="10" >
+                <StackLayout>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame CornerRadius="100" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="LightPink" Padding="0"   >
+                            <Label Text="FS" FontSize="Medium" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" Padding="0" />
+                        </Frame>
+                        <Label Text="HighLand Food Store" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+                        <Label Text="Đơn hàng của bạn đang được xử lý, vui lòng chờ đợi trong giây lát" FontSize="Micro" Grid.Row="1" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                        <Label Text="9.50 AM" Grid.Row="0" Grid.Column="2" TextColor="LightPink" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
