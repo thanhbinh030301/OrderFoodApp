@@ -39,17 +39,17 @@
 
                             <StackLayout  Orientation="Horizontal" Margin="5,0">
                                 <CheckBox  IsChecked="False" Color="#6CB0C5" Margin="-3,5"/>
-                                <Label Text="Remember me" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                <Label Text="Lưu lại" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
 
-                                <Button Text="Forgot Password" BackgroundColor="#F4F5FA" TextColor="#6CB0C5" FontAttributes="Bold" Padding="0,4,6,0" HorizontalOptions="EndAndExpand" FontSize="11" x:Name="ButtonForgot" Clicked="ButtonForgot_Clicked"/>
+                                <Button Text="Quên mật khẩu" BackgroundColor="#F4F5FA" TextColor="#6CB0C5" FontAttributes="Bold" Padding="0,4,6,0" HorizontalOptions="EndAndExpand" FontSize="11" x:Name="ButtonForgot" Clicked="ButtonForgot_Clicked"/>
 
 
                             </StackLayout>
 
                             <Button Text="ĐĂNG NHẬP" BackgroundColor="#6CB0C5" TextColor="White" CornerRadius="30" x:Name="ChangeHomePage" Clicked="Login_Clicked"/>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,5">
-                                <Label Text="Still Not Connected ?" TextColor="DarkGray" FontSize="Small" Padding="17,0,0,24"/>
-                                <Button BackgroundColor="#F4F5FA" Text="Sign Up" TextColor="#6CB0C5" Padding="-20,-4,15,24" FontAttributes="Bold" FontSize="12" x:Name="ButtonSignUp" Clicked="ButtonSignUp_Clicked"/>
+                                <Label Text="Vẫn chưa có tài khoản?" TextColor="DarkGray" FontSize="Small" Padding="17,0,0,24"/>
+                                <Button BackgroundColor="#F4F5FA" Text="Đăng ký" TextColor="#6CB0C5" Padding="-20,-4,15,24" FontAttributes="Bold" FontSize="12" x:Name="ButtonSignUp" Clicked="ButtonSignUp_Clicked"/>
                             </StackLayout>
 
                             <StackLayout Margin="3,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
