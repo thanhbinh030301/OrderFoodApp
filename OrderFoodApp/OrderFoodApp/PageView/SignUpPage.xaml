@@ -48,7 +48,7 @@
                             </Frame>
 
                             <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="10,5" >
-                                <Label Text="By creating an account, you agree to our Terms of Service and Privacy Policy" TextColor="DarkGray" FontAttributes="None" HorizontalOptions="EndAndExpand" FontSize="13" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                <Label Text="Bằng cách tạo tài khoản, bạn sẽ được đăng nhập và sử dụng app của chúng tôi" TextColor="DarkGray" FontAttributes="None" HorizontalOptions="EndAndExpand" FontSize="13" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                             </StackLayout>
 
                             <Button Text="ĐĂNG KÝ TÀI KHOẢN" BackgroundColor="#6CB0C5" TextColor="White" CornerRadius="30" Clicked="Signup_Clicked" />
