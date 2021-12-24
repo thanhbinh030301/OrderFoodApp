@@ -9,13 +9,13 @@
         <ScrollView>
             <StackLayout>
                 <!--WELCOME-->
-                <AbsoluteLayout HeightRequest="50" Margin="15,0,15,0" HorizontalOptions="FillAndExpand">
-                    <Label AbsoluteLayout.LayoutBounds="0,0,1,1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Large" AbsoluteLayout.LayoutFlags="All" Text="Let's Start"/>
+                <AbsoluteLayout HeightRequest="50" Margin="15,10,15,0" HorizontalOptions="FillAndExpand">
+                    <Label AbsoluteLayout.LayoutBounds="0,0,1,1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Large" AbsoluteLayout.LayoutFlags="All" Text="Home Page"/>
                     <Image Source="cart.png" AbsoluteLayout.LayoutBounds="1,0.5,30,30" AbsoluteLayout.LayoutFlags="YProportional,XProportional"/>
                 </AbsoluteLayout>
                 <StackLayout Margin="20,0,20,0">
-                    <Label Text="Hi" FontSize="Large"/>
-                    <Label Text="What are you looking for?" FontSize="Large"/>
+                    <Label Text="Chào" FontSize="20"/>
+                    <Label Text="Bạn đang tìm kiếm điều gì?" FontSize="20"/>
                 </StackLayout>
                 <!--SEARCH-->
                 <Frame HasShadow="True" IsClippedToBounds="True" Margin="20,10,20,0" HeightRequest="60" CornerRadius="30" Padding="0">
@@ -43,7 +43,7 @@
                             <Frame HeightRequest="50" WidthRequest="50" CornerRadius="25" Padding="0" HasShadow="False" BackgroundColor="#90bc1b">
                                 <Image Source="oclock" VerticalOptions="Center" HeightRequest="30" WidthRequest="30" Aspect="AspectFit"/>
                             </Frame>
-                            <Label Text="332, BD, VN" VerticalTextAlignment="Center"/>
+                              <Label Text="9am, DL, VN" VerticalTextAlignment="Center"/>
                         </StackLayout>
                     </Frame>
                 </Grid>
@@ -68,7 +68,7 @@
                                 <Image Source="all.png" WidthRequest="10" HeightRequest="40"  Aspect="AspectFit"/>
                             </Frame>
                             <BoxView HeightRequest="14"/>
-                            <Label Padding="0,0,0,0" Text="All" HorizontalTextAlignment="Center" TextColor="Black"/>
+                            <Label Padding="0,0,0,0" Text="Tất cả" HorizontalTextAlignment="Center" TextColor="Black"/>
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Column="1" Grid.Row="0" OutlineColor="DarkGray"  BackgroundColor="White" HeightRequest="150" WidthRequest="90" CornerRadius="100" HasShadow="True" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
@@ -80,7 +80,7 @@
                                 <Image Source="food.png" WidthRequest="40" HeightRequest="40" Aspect="AspectFill"/>
                             </Frame>
                             <BoxView HeightRequest="14"/>
-                            <Label Padding="0,0,0,0" Text="Food" HorizontalTextAlignment="Center" TextColor="Black"/>
+                            <Label Padding="0,0,0,0" Text="Đồ ăn" HorizontalTextAlignment="Center" TextColor="Black"/>
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Column="2" Grid.Row="0" OutlineColor="DarkGray" BackgroundColor="White" HeightRequest="150" WidthRequest="90" CornerRadius="100" HasShadow="True" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
@@ -92,7 +92,7 @@
                                 <Image Source="drink.png" WidthRequest="40" HeightRequest="40" Aspect="AspectFit"/>
                             </Frame>
                             <BoxView HeightRequest="14"/>
-                            <Label Padding="0,0,0,0" Text="Drinks" HorizontalTextAlignment="Center" TextColor="Black"/>
+                            <Label Padding="0,0,0,0" Text="Đồ uống" HorizontalTextAlignment="Center" TextColor="Black"/>
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Column="3" Grid.Row="0" OutlineColor="DarkGray" BackgroundColor="White" HeightRequest="150" WidthRequest="90" CornerRadius="100" HasShadow="True" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
@@ -104,7 +104,7 @@
                                 <Image Source="cake.png" WidthRequest="40" HeightRequest="40" Aspect="AspectFit"/>
                             </Frame>
                             <BoxView HeightRequest="14"/>
-                            <Label Padding="0,0,0,0" Text="Cakes" HorizontalTextAlignment="Center" TextColor="Black"/>
+                            <Label Padding="0,0,0,0" Text="Bánh ngọt" HorizontalTextAlignment="Center" TextColor="Black"/>
                         </StackLayout>
                     </Frame>
                 </Grid>
