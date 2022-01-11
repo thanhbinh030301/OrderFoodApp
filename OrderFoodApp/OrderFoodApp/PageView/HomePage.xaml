@@ -71,7 +71,7 @@
                             <Label Padding="0,0,0,0" Text="Tất cả" HorizontalTextAlignment="Center" TextColor="Black"/>
                         </StackLayout>
                     </Frame>
-                    <Frame Grid.Column="1" Grid.Row="0" OutlineColor="DarkGray"  BackgroundColor="White" HeightRequest="150" WidthRequest="90" CornerRadius="100" HasShadow="True" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
+                    <Frame Grid.Column="1" Grid.Row="0" OutlineColor="DarkGray"  BackgroundColor="#6CB0C5" HeightRequest="150" WidthRequest="90" CornerRadius="100" HasShadow="True" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="categoryItem_Tapped"/>
                         </Frame.GestureRecognizers>
@@ -83,7 +83,7 @@
                             <Label Padding="0,0,0,0" Text="Đồ ăn" HorizontalTextAlignment="Center" TextColor="Black"/>
                         </StackLayout>
                     </Frame>
-                    <Frame Grid.Column="2" Grid.Row="0" OutlineColor="DarkGray" BackgroundColor="White" HeightRequest="150" WidthRequest="90" CornerRadius="100" HasShadow="True" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
+                    <Frame Grid.Column="2" Grid.Row="0" OutlineColor="DarkGray" BackgroundColor="#6CB0C5" HeightRequest="150" WidthRequest="90" CornerRadius="100" HasShadow="True" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="categoryItem_Tapped"/>
                         </Frame.GestureRecognizers>
@@ -95,7 +95,7 @@
                             <Label Padding="0,0,0,0" Text="Đồ uống" HorizontalTextAlignment="Center" TextColor="Black"/>
                         </StackLayout>
                     </Frame>
-                    <Frame Grid.Column="3" Grid.Row="0" OutlineColor="DarkGray" BackgroundColor="White" HeightRequest="150" WidthRequest="90" CornerRadius="100" HasShadow="True" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
+                    <Frame Grid.Column="3" Grid.Row="0" OutlineColor="DarkGray" BackgroundColor="#6CB0C5" HeightRequest="150" WidthRequest="90" CornerRadius="100" HasShadow="True" IsClippedToBounds="True" Padding="0" HorizontalOptions="Center">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="categoryItem_Tapped"/>
                         </Frame.GestureRecognizers>
@@ -111,7 +111,7 @@
                 <!--MON MOI-->
                 <Label Margin="10,10,10,0"  Text="Món mới" FontSize="Large"/>
                 <ScrollView Orientation="Horizontal" Margin="15,7.5,15,0" HorizontalScrollBarVisibility="Never">
-                    <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding LstItems}">
+                    <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding LstItems1}">
                         <!--detail-->
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
@@ -161,152 +161,51 @@
                 <!--PHOBIEN-->
                 <Label Margin="15,15,15,0"  Text="Phổ biến" FontSize="Large"/>
                 <ScrollView Orientation="Horizontal" Margin="15,7.5,15,0" HorizontalScrollBarVisibility="Never">
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding LstItems2}">
                         <!--detail-->
-                        <Frame CornerRadius="5" HasShadow="True" WidthRequest="250" Padding="0" IsClippedToBounds="True">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="foodFrame_Tapped"/>
-                            </Frame.GestureRecognizers>
-                            <StackLayout Orientation="Vertical" Margin="0,10,10,10">
-                                <Frame Padding="0" HasShadow="False" CornerRadius="5" IsClippedToBounds="True">
-                                    <Image Source="pasta.jpg"/>
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame CornerRadius="5" HasShadow="True" WidthRequest="250" Padding="0" IsClippedToBounds="True">
+                                    <StackLayout Orientation="Vertical" Margin="0,10,10,10">
+                                        <Frame Padding="0" HasShadow="False" CornerRadius="5" IsClippedToBounds="True">
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="foodFrame_Tapped"/>
+                                            </Frame.GestureRecognizers>
+                                            <Image Source="{Binding Img}" HeightRequest="200" WidthRequest="150" Aspect="AspectFill"/>
+                                        </Frame>
+                                        <Label Text="{Binding Name}" FontSize="20"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                                    <Image Source="place_dark" WidthRequest="20" HeightRequest="20"/>
+                                                    <Label Text="2.2Km"/>
+                                                </StackLayout>
+                                                <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                                    <Image Source="oclock_dark" WidthRequest="20" HeightRequest="20"/>
+                                                    <Label Text="20-30m"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+
+                                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="star.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Start"/>
+                                            <Label Text="4.8" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+                                            <Label Text="/5" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                            <Image Source="addtocart.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="End">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="Addtocart_Tapped"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
+                                    </StackLayout>
                                 </Frame>
-                                <Label Text="Pasta food" FontSize="20"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <StackLayout Grid.Column="0" Orientation="Horizontal">
-                                            <Image Source="place_dark" WidthRequest="20" HeightRequest="20"/>
-                                            <Label Text="2.2Km"/>
-                                        </StackLayout>
-                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
-                                            <Image Source="oclock_dark" WidthRequest="20" HeightRequest="20"/>
-                                            <Label Text="20-30m"/>
-                                        </StackLayout>
-                                    </Grid>
-                                </StackLayout>
-
-                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="star.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Start"/>
-                                    <Label Text="4.8" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
-                                    <Label Text="/5" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
-                                    <Image Source="addtocart.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="End"/>
-                                </StackLayout>
-
-                            </StackLayout>
-                        </Frame>
-                        <Frame CornerRadius="5" HasShadow="True" WidthRequest="250" Padding="0" IsClippedToBounds="True">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="foodFrame_Tapped"/>
-                            </Frame.GestureRecognizers>
-                            <StackLayout Orientation="Vertical" Margin="0,10,10,10">
-                                <Frame Padding="0" HasShadow="False" CornerRadius="5" IsClippedToBounds="True">
-                                    <Image Source="pasta.jpg"/>
-                                </Frame>
-                                <Label Text="Pasta food" FontSize="20"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <StackLayout Grid.Column="0" Orientation="Horizontal">
-                                            <Image Source="place_dark" WidthRequest="20" HeightRequest="20"/>
-                                            <Label Text="2.2Km"/>
-                                        </StackLayout>
-                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
-                                            <Image Source="oclock_dark" WidthRequest="20" HeightRequest="20"/>
-                                            <Label Text="20-30m"/>
-                                        </StackLayout>
-                                    </Grid>
-                                </StackLayout>
-
-                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="star.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Start"/>
-                                    <Label Text="4.8" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
-                                    <Label Text="/5" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
-                                    <Image Source="addtocart.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="End"/>
-                                </StackLayout>
-
-                            </StackLayout>
-                        </Frame>
-                        <Frame CornerRadius="5" HasShadow="True" WidthRequest="250" Padding="0" IsClippedToBounds="True">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="foodFrame_Tapped"/>
-                            </Frame.GestureRecognizers>
-                            <StackLayout Orientation="Vertical" Margin="0,10,10,10">
-                                <Frame Padding="0" HasShadow="False" CornerRadius="5" IsClippedToBounds="True">
-                                    <Image Source="pasta.jpg"/>
-                                </Frame>
-                                <Label Text="Pasta food" FontSize="20"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <StackLayout Grid.Column="0" Orientation="Horizontal">
-                                            <Image Source="place_dark" WidthRequest="20" HeightRequest="20"/>
-                                            <Label Text="2.2Km"/>
-                                        </StackLayout>
-                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
-                                            <Image Source="oclock_dark" WidthRequest="20" HeightRequest="20"/>
-                                            <Label Text="20-30m"/>
-                                        </StackLayout>
-                                    </Grid>
-                                </StackLayout>
-
-                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="star.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Start"/>
-                                    <Label Text="4.8" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
-                                    <Label Text="/5" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
-                                    <Image Source="addtocart.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="End"/>
-                                </StackLayout>
-
-                            </StackLayout>
-                        </Frame>
-                        <Frame CornerRadius="5" HasShadow="True" WidthRequest="250" Padding="0" IsClippedToBounds="True">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="foodFrame_Tapped"/>
-                            </Frame.GestureRecognizers>
-                            <StackLayout Orientation="Vertical" Margin="0,10,10,10">
-                                <Frame Padding="0" HasShadow="False" CornerRadius="5" IsClippedToBounds="True">
-                                    <Image Source="pasta.jpg"/>
-                                </Frame>
-                                <Label Text="Pasta food" FontSize="20"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <StackLayout Grid.Column="0" Orientation="Horizontal">
-                                            <Image Source="place_dark" WidthRequest="20" HeightRequest="20"/>
-                                            <Label Text="2.2Km"/>
-                                        </StackLayout>
-                                        <StackLayout Grid.Column="1" Orientation="Horizontal">
-                                            <Image Source="oclock_dark" WidthRequest="20" HeightRequest="20"/>
-                                            <Label Text="20-30m"/>
-                                        </StackLayout>
-                                    </Grid>
-                                </StackLayout>
-
-                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="star.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Start"/>
-                                    <Label Text="4.8" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
-                                    <Label Text="/5" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
-                                    <Image Source="addtocart.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="End"/>
-                                </StackLayout>
-
-                            </StackLayout>
-                        </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
                     </StackLayout>
                 </ScrollView>
             </StackLayout>

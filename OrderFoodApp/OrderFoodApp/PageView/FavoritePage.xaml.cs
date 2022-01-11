@@ -41,5 +41,14 @@ namespace OrderFoodApp
             this.BindingContext = this;
 
         }
+
+        private async void Item_Tapped(object sender, EventArgs e)
+        {
+            Frame frame = (Frame)sender;
+            await frame.ScaleTo(1.1, 100);
+            await frame.ScaleTo(1.0, 100);
+            Item selectedItem = (Item)frame.BindingContext;
+            await Navigation.PushAsync(new DetailFoodPage(selectedItem));
+        }
     }
 }

@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="OrderFoodApp.CartPage">
+             x:Class="OrderFoodApp.CartPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#F4F5FA">
             <Grid>
@@ -45,9 +46,17 @@
                                 <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" FontSize="16" WidthRequest="140"/>
                                 <Label Text="{Binding Price}" Grid.Row="1" Grid.Column="1" FontSize="12" />
 
-                                <Image Source="minus.png" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" WidthRequest="25"/>
-                                <Label Text="{Binding Number}" Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" FontSize="19" />
-                                <Image Source="plus.png" Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" WidthRequest="25"/>
+                                    <Image Source="minus.png" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" WidthRequest="25">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="minus_Tapped"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label Text="{Binding Number}" Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" FontSize="19" />
+                                    <Image Source="plus.png" Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" WidthRequest="25">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="plus_Tapped"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
 
                                     <Image Source="trash.png" Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" WidthRequest="22" Margin="40,0,0,0">
                                         <Image.GestureRecognizers>

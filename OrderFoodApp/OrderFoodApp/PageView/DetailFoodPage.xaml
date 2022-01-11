@@ -22,16 +22,28 @@
             <Label Text="Số lượng" FontSize="Large" FontAttributes="Bold"/>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
+                    <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
-                <Stepper Grid.Row="0" Grid.Column="0" Margin="0" Minimum="1" Maximum="10" x:Name="stepper" Increment="1" HorizontalOptions="Center" VerticalOptions="Center" />
-                <Label Grid.Row="0" Grid.Column="1" BindingContext="{x:Reference stepper}" Text="{Binding Value}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <!--<Stepper Grid.Row="0" Grid.Column="0" Margin="0" Minimum="1" Maximum="10" x:Name="stepper" Increment="1" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Grid.Row="0" Grid.Column="1" BindingContext="{x:Reference stepper}" Text="{Binding Value}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Start"/>-->
+                <Image Source="minus.png" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" WidthRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="minus_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label x:Name="number" Text="{Binding Number}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="25" />
+                <Image Source="plus.png" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" WidthRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="plus_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </Grid>
-            <BoxView HeightRequest="30"/>
+            <BoxView HeightRequest="0"/>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,46 +10,42 @@ using Xamarin.Forms.Xaml;
 namespace OrderFoodApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class ItemPage : ContentPage
     {
         API firebase = new API();
-
-
-        public HomePage()
+        public ItemPage()
         {
             InitializeComponent();
-
         }
-        public List<Item> LstItems1 { get; set; }
-        public List<Item> LstItems2 { get; set; }
 
-        protected async override void OnAppearing()
+        public  ItemPage(string label)
         {
-            base.OnAppearing();
-            var allItems = await firebase.GetAllItem();
-            var item = await firebase.GetType();
-            LstItems1 = allItems;
-            LstItems2 = item;
-            this.BindingContext = this;
-            
+            InitializeComponent();
+            Title = label;
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.White;
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Gray;
+            InitView(label);
         }
+        public List<Item> Lst { get; set; }
+        public async void InitView(string label)
+        {
+            var allItems = await firebase.GetItems(label);
+            if (label=="Tất cả")
+            {
+                allItems = await firebase.GetAllItem();
+            }
+            
+            Lst = allItems;
+            this.BindingContext = this;
+        }
+
         private async void foodFrame_Tapped(object sender, EventArgs e)
         {
             Frame frame = (Frame)sender;
             await frame.ScaleTo(1.1, 100);
             await frame.ScaleTo(1.0, 100);
-            Item selectedItem = (Item)frame.BindingContext;        
+            Item selectedItem = (Item)frame.BindingContext;
             await Navigation.PushAsync(new DetailFoodPage(selectedItem));
-        }
-
-        private void categoryItem_Tapped(object sender, EventArgs e)
-        {
-
-            Frame tappedFrame = (sender as Frame);
-            var stackLayout = tappedFrame.Content as StackLayout;
-            var label = stackLayout.Children[2] as Label;
-            Navigation.PushAsync(new ItemPage(label.Text));
-            
         }
 
         private async void Addtocart_Tapped(object sender, EventArgs e)

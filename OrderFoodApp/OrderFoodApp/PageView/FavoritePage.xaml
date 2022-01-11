@@ -37,6 +37,9 @@
                             <DataTemplate>
                                 <StackLayout>
                                     <Frame HasShadow="False" BackgroundColor="#6CB0C5" HeightRequest="90" CornerRadius="20" Margin="0,10">
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Item_Tapped"/>
+                                            </Frame.GestureRecognizers>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto"/>

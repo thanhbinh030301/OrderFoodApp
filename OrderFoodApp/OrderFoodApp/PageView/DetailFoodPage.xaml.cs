@@ -30,6 +30,7 @@ namespace OrderFoodApp
             heart_click.Source = (item.Favourite) ? "CompleteHeart.png" : "EmptyHeart.png";
             PriceItem.Text = item.Price.ToString();
             temp = item;
+            number.Text = "1";
         }
 
         private async void HeartTapped(object sender, EventArgs e)
@@ -53,9 +54,34 @@ namespace OrderFoodApp
             }
         }
 
-        private void CartTapped(object sender, EventArgs e)
+        private async void CartTapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CartPage());
+            Frame img = (Frame)sender;
+            await img.ScaleTo(1.1, 100);
+            await img.ScaleTo(1.0, 100);
+            var addtocart = await firebase.AddToCart(temp,count);
+            if (addtocart)
+            {
+                await DisplayAlert("Thông báo", "Thêm thành công", "Ok");
+            }
+        }
+
+        public int count = 1;
+        private void minus_Tapped(object sender, EventArgs e)
+        {
+            if (count>1)
+            {
+                count--;
+            }
+            number.Text = count.ToString();
+            PriceItem.Text = (temp.Price * count).ToString();
+        }
+
+        private void plus_Tapped(object sender, EventArgs e)
+        {
+            count++;
+            number.Text = count.ToString();
+            PriceItem.Text = (temp.Price * count).ToString();
         }
     }
 }

@@ -31,7 +31,50 @@ namespace OrderFoodApp
                   MenuId = item.Object.MenuId
               }).ToList();
         }
+        public async Task<List<Item>> GetItems(string category)
+        {
+            int temp = 0;
+            switch (category)
+            {
+                case "Đồ ăn":
+                    temp = 1;
+                    break;
+                case "Đồ uống":
+                    temp = 3;
+                    break;
+                case "Bánh ngọt":
+                    temp = 2;
+                    break;
+            }
 
+            return (await firebase
+              .Child("Food")
+              .OnceAsync<Item>()).Where(a => a.Object.MenuId == temp.ToString()).Select(item => new Item
+              {
+                  Id = item.Object.Id,
+                  Name = item.Object.Name,
+                  Img = item.Object.Img,
+                  Descr = item.Object.Descr,
+                  Price = item.Object.Price,
+                  Favourite = item.Object.Favourite,
+                  MenuId = item.Object.MenuId
+              }).ToList();
+        }
+
+        public async Task<List<Item>> GetType()
+        {
+            var Item = (await firebase.Child("Food").OnceAsync<Item>()).Where(a => a.Object.Type == "2").Select(item => new Item
+            {
+                Name = item.Object.Name,
+                Img = item.Object.Img,
+                Descr = item.Object.Descr,
+                Price = item.Object.Price,
+                Favourite = item.Object.Favourite,
+                MenuId = item.Object.MenuId
+            }).ToList();
+
+            return Item;
+        }
         public async Task<List<Item>> GetFavouriteItem()
         {
             var FavouriteItem = (await firebase.Child("Food").OnceAsync<Item>()).Where(a => a.Object.Favourite == true).Select(item => new Item
@@ -79,11 +122,11 @@ namespace OrderFoodApp
             }
         }
 
-        public async Task<bool> AddToCart(Item item)
+        public async Task<bool> AddToCart(Item item, int count)
         {
             var result = await firebase
                 .Child("Cart")
-                .PostAsync(new Cart() { Id = item.Id, Name = item.Name, Number = 1, Price = item.Price, Img = item.Img });
+                .PostAsync(new Cart() { Id = item.Id, Name = item.Name, Number = count, Price = item.Price*count, Img = item.Img });
 
             if (result.Object != null)
             {
@@ -100,7 +143,7 @@ namespace OrderFoodApp
         {
             var result = await firebase
                 .Child("Order")
-                .PostAsync(new Order() { Name = cart.Name, Number = 1, Price = cart.Price, Img = cart.Img, Date = DateTime.Now });
+                .PostAsync(new Order() { Name = cart.Name, Number = cart.Number, Price = cart.Price, Img = cart.Img, Date = DateTime.Now });
 
             if (result.Object != null)
             {

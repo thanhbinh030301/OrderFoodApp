@@ -13,5 +13,6 @@ namespace OrderFoodApp
         public string Descr { get; set; }
         public int Price { get; set; }
         public string MenuId { get; set; }
+        public string Type { get; set; }
     }
 }

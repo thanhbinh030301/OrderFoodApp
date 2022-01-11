@@ -74,5 +74,15 @@ namespace OrderFoodApp
             }
             PriceTotal.Text = total.ToString();
         }
+
+        private void minus_Tapped(object sender, EventArgs e)
+        {
+
+        }
+
+        private void plus_Tapped(object sender, EventArgs e)
+        {
+
+        }
     }
 }

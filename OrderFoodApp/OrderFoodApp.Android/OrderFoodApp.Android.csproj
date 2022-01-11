@@ -133,9 +133,6 @@
     <AndroidResource Include="Resources\drawable\oclock_dark.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\pasta.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\place.png" />
   </ItemGroup>
   <ItemGroup>

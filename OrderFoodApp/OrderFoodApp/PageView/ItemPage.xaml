@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderFoodApp.ItemPage">
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Lst}"
+                ItemsLayout="VerticalGrid, 2" Margin="5,0,0,5">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="5" HasShadow="True" WidthRequest="200" Padding="0" IsClippedToBounds="True">
+                        <StackLayout Orientation="Vertical" Margin="0,10,10,10">
+                            <Frame Padding="0" HasShadow="False" CornerRadius="5" IsClippedToBounds="True">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="foodFrame_Tapped"/>
+                                </Frame.GestureRecognizers>
+                                <Image Source="{Binding Img}" HeightRequest="150" WidthRequest="150" Aspect="AspectFill"/>
+                            </Frame>
+                            <Label Text="{Binding Name}" FontSize="20"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                        <Image Source="place_dark" WidthRequest="20" HeightRequest="20"/>
+                                        <Label Text="2.2Km"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1" Orientation="Horizontal">
+                                        <Image Source="oclock_dark" WidthRequest="20" HeightRequest="20"/>
+                                        <Label Text="20-30m"/>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+
+                            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="0"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="star.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Start"/>
+                                <Label Text="4.8" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+                                <Label Text="/5" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                <Image Source="addtocart.png" WidthRequest="30" HeightRequest="35" HorizontalOptions="End">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Addtocart_Tapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>
