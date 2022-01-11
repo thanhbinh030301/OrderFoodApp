@@ -10,7 +10,7 @@ namespace OrderFoodApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new TabPage());
+            MainPage = new NavigationPage(new MainPage());
             
         }
 
