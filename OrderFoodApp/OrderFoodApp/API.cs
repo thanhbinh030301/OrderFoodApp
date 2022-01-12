@@ -214,6 +214,24 @@ namespace OrderFoodApp
             }
             
         }
+
+        public async Task UpdateNumberCart(Cart item, int count)
+        {
+            var numberItem = (await firebase
+              .Child("Food")
+              .OnceAsync<Item>()).Where(a => a.Object.Name == item.Name).FirstOrDefault();
+
+
+            var toUpdateItem = (await firebase
+              .Child("Cart")
+              .OnceAsync<Cart>()).Where(a => a.Object.Name == item.Name).FirstOrDefault();
+            await firebase
+          .Child("Cart")
+          .Child(toUpdateItem.Key)
+          .PutAsync(new Cart() { Id = item.Id, Name = item.Name, Img = item.Img, Number = count, Price = numberItem.Object.Price * count });
+
+
+        }
     }
  
 }

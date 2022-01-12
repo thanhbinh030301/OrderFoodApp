@@ -55,7 +55,7 @@
                                                 <Image Source="{Binding Img}" HeightRequest="100" WidthRequest="95" Aspect="AspectFill"/>
                                             </StackLayout>
                                             <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Name}" FontSize="15" FontAttributes="Bold"/>
-                                            <Label Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Text="{Binding Descr}" FontSize="15" TextColor="#000"/>
+                                            <Label Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Text="{Binding Descr}" MaxLines="3" FontSize="15" TextColor="#000"/>
                                             <Image Grid.Row="2" Grid.Column="1" Source="Star" HorizontalOptions="Start" WidthRequest="20"/>
                                             <Label Grid.Row="2" Grid.Column="1" Margin="30,0,0,0" FontSize="15" VerticalOptions="Center">
                                                 <Label.FormattedText>

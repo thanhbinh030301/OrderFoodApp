@@ -75,14 +75,29 @@ namespace OrderFoodApp
             PriceTotal.Text = total.ToString();
         }
 
-        private void minus_Tapped(object sender, EventArgs e)
+        private async void minus_Tapped(object sender, EventArgs e)
         {
-
+            Image img = (Image)sender;
+            Cart selectedItem = (Cart)img.BindingContext;
+            await img.ScaleTo(1.1, 100);
+            await img.ScaleTo(1.0, 100);
+            if (selectedItem.Number > 1)
+            {
+                selectedItem.Number--;
+                await firebase.UpdateNumberCart(selectedItem, selectedItem.Number);
+            }
+            OnAppearing();
         }
 
-        private void plus_Tapped(object sender, EventArgs e)
+        private async void plus_Tapped(object sender, EventArgs e)
         {
-
+            Image img = (Image)sender;
+            Cart selectedItem = (Cart)img.BindingContext;
+            await img.ScaleTo(1.1, 100);
+            await img.ScaleTo(1.0, 100);
+            selectedItem.Number++;
+            await firebase.UpdateNumberCart(selectedItem, selectedItem.Number);
+            OnAppearing();
         }
     }
 }
